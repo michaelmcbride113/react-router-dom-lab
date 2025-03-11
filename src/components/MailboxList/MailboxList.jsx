@@ -1,5 +1,3 @@
-// src/components/PokemonList/PokemonList.jsx
-
 import { Link } from 'react-router';
 
 const MailboxList = (props) => {
@@ -7,16 +5,16 @@ const MailboxList = (props) => {
         <>
         <h2>Mailboxes</h2>
         <ul>
-            {props.mailbox.map((currentMailbox) => {
-                <li key={currentMailbox.name}>
+            {props.mailbox.map((currentMailbox) => (
+                <li key={currentMailbox._id}>
                     <Link to={`/mailbox${currentMailbox._id}`}>
-                    {currentMailbox.name}
+                    {currentMailbox.boxOwner}
                     </Link>
                 </li>
-            })}
+            ))}
         </ul>
     </>
     );
 };
 
-export default MailboxList
+export default MailboxList;
