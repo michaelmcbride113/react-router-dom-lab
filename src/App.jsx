@@ -6,7 +6,7 @@ import MailboxDetails from './components/MailboxDetails/MailboxDetails';
 import MailboxForm from './components/MailboxForm/MailboxForm';
 
 const initialState = [
-  {_id: 1, boxOwner: 'Michael', boxSize: 'Medium',}
+  {_id: '', boxOwner: '', boxSize: '',}
 ]
 
 const App = () => {
@@ -24,7 +24,7 @@ const App = () => {
     <Route path='/' element={<h1>Post Office</h1>} />
       <Route path='/mailbox' element={<MailboxList mailbox={mailbox} />} />
       <Route path='/mailbox/new' element={<MailboxForm addBox={addBox} />} />
-      <Route path='/mailboxes/:mailboxId' 
+      <Route path='/mailbox/:mailboxId' 
       element={<MailboxDetails mailbox={mailbox}/>} />
     <Route path="*" element={ <h2>Mailbox Not Found! </h2> }></Route>
     </Routes>

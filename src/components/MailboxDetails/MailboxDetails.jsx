@@ -5,7 +5,7 @@ const MailboxDetails = (props) => {
     
     const { mailboxId } = useParams();
     const singleMailbox = props.mailbox.find((box) => {
-        box._id === Number(mailboxId)
+      return box._id === Number(mailboxId)
     });
 
     return (
