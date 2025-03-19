@@ -4,9 +4,11 @@ const MailboxDetails = (props) => {
     console.log(props); 
     
     const { mailboxId } = useParams();
-    const singleMailbox = props.mailbox.find((box) => {
-      return box._id === Number(mailboxId)
-    });
+    const singleMailbox = props.mailbox.find((box) => box._id === Number(mailboxId));
+
+    if (!singleMailbox) {
+      return <h2>Mailbox is not found!</h2>;
+    }
 
     return (
       <>
